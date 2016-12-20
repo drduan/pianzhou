@@ -119,12 +119,12 @@
 	} */
 </script>
 <div class="container-fluid">
-<div class="row">
+<div class="row" style="background: #4ca0d2">
 		
-		<div class="col-md-12 text-right">
+		<div class="col-md-12 text-right" >
 			
-			<ol class="breadcrumb" id="info">
-				<c:if test="${sessionScope['_LOGIN_USER_']==null}">
+			<ol class="breadcrumb" id="info" style="background: #4ca0d2">
+				<c:if test="${sessionScope['_LOGIN_USER_']==null}" >
 					<li id="li1"><span>游客您好，欢迎来到扁舟旅游！！</span>
 					<a href="#loginFormModal" data-toggle="modal">[登录]</a>&nbsp;<a href="#regFormModal" data-toggle="modal">[新用户注册]</a></li>
 					
@@ -137,6 +137,7 @@
 			</ol>
 			
 		</div>
+		<div class="col-md-12">
 		<div class="col-md-2">
 		
 		</div>
@@ -206,6 +207,8 @@
 					</div>
 				
 			</nav>
+		</div>
+		<div class="col-md-2"></div>
 		</div>
 </div>
 <div class="col-md-2">

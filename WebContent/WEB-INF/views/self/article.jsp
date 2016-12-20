@@ -6,46 +6,37 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="stylesheet"
-	href="../views/css/css/updPersonInfo.css"
-	type="text/css"></link>
-<link rel="stylesheet"
-	href="/css/css/homePage.css"
-	type="text/css"></link>
-<link rel="stylesheet"
-	href="/css/css/common.css"
-	type="text/css"></link>
-	
-
 </head>
 <body>
 
 	<jsp:include page="head.jsp"></jsp:include>
 	<!-- 内部导航 -->
 	<div class="row">
-		<div class="col-md-12" align="center">
 		
-		adasdas</div>
 		<!-- 内容布局 -->
 		<div class="col-md-12">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="col-md-3">
+					<div class="col-md-2" style="background: #8DC6DD ;height: 100vh">
 						<div
-							style="width: 20%; float: left; text-align: center; padding-top: 5px">
+							style="width: 20%; float: left; text-align: center; padding-top: 0px">
 						</div>
 					</div>
-					<div class="col-md-7">
-						<table align="center" width="100%">
+					<div class="col-md-8"  style="background: #8DC6DD; height: 100vh ; "   >
+						<table align="center" width="100%" style="background: #ffffff;border: 15px #ffffff solid">
 							<tr>
+							<td align="left">
+							
+								<h6>当前位置：旅游作品><a href="#">旅游日记</a></h6>
+								</td>
 								<td align="right"><a
 									href="${pageContext.request.contextPath}/user/toaddarticle">发表</a>
 								</td>
 							</tr>
 
-							<tr>
-								<td width="80%" valign="top" colspan="2"
-									style="border-top: 1px #D8DFEA solid; border-bottom: 1px #D8DFEA solid;">
+							<tr >
+								<td width="100%" valign="top" colspan="2"
+									style="border-top: 1px #D8DFEA solid;#D8DFEA solid;  border-bottom: 1px #D8DFEA solid; ">
 									<c:if test="${!empty article}">
 										<c:forEach items="${article}" var="e" varStatus="vs">
 											<table width="100%" border="0" cellpadding="5">
@@ -93,7 +84,9 @@
 						</table>
 					</div>
 
-					<div class="col-md-2"></div>
+					<div  class="col-md-2"  style="background: #8DC6DD;height: 100vh">
+					
+					</div>
 				</div>
 
 			</div>
