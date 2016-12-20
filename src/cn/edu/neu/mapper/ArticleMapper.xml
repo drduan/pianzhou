@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	namespace：必须与对应的接口全类名一致
+	id:必须与对应接口的某个对应的方法名一致
+	
+ -->
+<mapper namespace="cn.edu.neu.mapper.ArticleMapper">
+    <select id="getArtlist" resultType="Article">
+        select artid,title,authorId,indate from article where authorId = #{authorId}
+    </select>
+    
+    <select id="addArticle" parameterType="Article" resultType="Article">
+        insert into article(artid,authorId,title,content,indate) values(null,#{param1},#{param2},#{param3},curdate())
+    </select>
+    
+    <select id="getnowArt"  resultType="Article" parameterType="int">
+        select artid,title,authorId,indate,content from article where artid = #{artid}
+    </select>
+    
+    <update id="editArt" > 
+        update article set content=#{param2} where artid = #{param1}
+    </update>
+    
+    <select id="getComment" resultType="Articlecomment">
+        select ac_Id,ac_articleId,ac_authorId,ac_content,ac_indate,name from articlecomment 
+        join users on articlecomment.ac_authorId = users.id 
+        where ac_articleId = #{artid}
+    </select>
+    
+    <insert id="addComment">
+        insert into articlecomment(ac_Id,ac_articleId,ac_authorId,ac_content,ac_indate) value(null,#{param1},#{param2},#{param3},curdate())
+    </insert>
+    
+    <delete id="delarticle" parameterType="int"> 
+            delete from article where artid = #{artid}
+	</delete>
+	
+	<delete id="delcomment" parameterType="int"> 
+            delete from articlecomment where ac_Id = #{ac_Id}
+	</delete>
+</mapper>
