@@ -156,7 +156,7 @@
 						<li class="active">
 							<a href="#">首页</a>
 						</li>
-						<li>
+						<li id="lvyouriji" onclick="li_click(this)">
 							<a href="${pageContext.request.contextPath}/user/toArticle">驴友日记</a>
 						</li>
 						<li>
@@ -179,7 +179,7 @@
 					    
 					    
 
-					   <ul class="nav navbar-nav navbar-right">
+					   <ul class="nav navbar-nav navbar-right" id="navlist">
 						
 						<li class="dropdown" >
 							<a class="dropdown-toggle" href="#" data-toggle="dropdown">排序<strong class="caret"></strong></a>
@@ -213,4 +213,12 @@
 		</div>
 </div>
 </body>
+<script type="text/javascript">
+
+function li_click(e)
+{
+	var li_click_i = e.getAttribute("id");
+	document.getElementById(li_click_i).style.background = "yellow";
+}
+</script>
 </html>

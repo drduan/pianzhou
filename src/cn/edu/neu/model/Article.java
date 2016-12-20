@@ -10,10 +10,17 @@ public class Article {
 	private String content;
 	private Date indate;
 	private int read;
+	private String img_url;
 	@Override
 	public String toString() {
 		return "Article [artid=" + artid + ", authorId=" + authorId + ", title=" + title + ", content=" + content
-				+ ", indate=" + indate + ", read=" + read + "]";
+				+ ", indate=" + indate + ", read=" + read +"img_url"+img_url+ "]";
+	}
+	public String getImg_url() {
+		return img_url;
+	}
+	public void setImg_url(String img_url) {
+		this.img_url = img_url;
 	}
 	public int getArtid() {
 		return artid;

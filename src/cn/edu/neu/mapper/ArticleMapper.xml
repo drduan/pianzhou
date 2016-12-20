@@ -8,15 +8,15 @@
  -->
 <mapper namespace="cn.edu.neu.mapper.ArticleMapper">
     <select id="getArtlist" resultType="Article">
-        select artid,title,authorId,indate from article where authorId = #{authorId}
+        select artid,title,authorId,indate,img_url from article where authorId = #{authorId}
     </select>
     
     <select id="addArticle" parameterType="Article" resultType="Article">
-        insert into article(artid,authorId,title,content,indate) values(null,#{param1},#{param2},#{param3},curdate())
+        insert into article(artid,authorId,title,content,indate,img_url) values(null,#{param1},#{param2},#{param3},curdate(),#{img_url})
     </select>
     
     <select id="getnowArt"  resultType="Article" parameterType="int">
-        select artid,title,authorId,indate,content from article where artid = #{artid}
+        select artid,title,authorId,indate,content,img_url from article where artid = #{artid}
     </select>
     
     <update id="editArt" > 

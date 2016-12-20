@@ -13,7 +13,7 @@ public interface ArticleMapper {
 
 	public List<Article> getArtlist(int authorId);
 	
-	public void addArticle(int authorId, String title, String content);
+	public void addArticle(int authorId, String title, String content,String img_url);
 
 	public boolean checkArtcile(int authorId, String title);
 

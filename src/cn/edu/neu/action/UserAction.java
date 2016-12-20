@@ -49,11 +49,6 @@ public class UserAction extends BaseAction{
 			session.setAttribute("user", dbUser);			
 			m.put("login", user);	
 			System.out.println(dbUser);			
-			//this.addMessage("登录成功");
-			//this.addRedirURL("用户页面", "head");
-			
-			
-			
 			return "/self/home"; 
 		}
 		else{
@@ -61,7 +56,8 @@ public class UserAction extends BaseAction{
 			//this.addRedirURL("返回登录页面", INDEX_PAGE);
 			System.out.println("========"+dbUser);
 			m.put("login",user);	
-			return "index"; 
+		//	return "index";
+				return "/self/home";
 		}
 		
 	}
@@ -201,7 +197,8 @@ public class UserAction extends BaseAction{
 		    User user = (User) session.getAttribute("user"); 
 		    int authorId = user.getUserId();
 		    
-			ArticleService.addArticle(authorId, title, content);				
+		    //最终 这里的img_url将会替换为实际的图片地址
+			ArticleService.addArticle(authorId, title, content,"/images/lyrz_img/1.jpg");				
 			List<Article> article = ArticleService.getArtlist(authorId);			
 			System.out.println("my:"+article);			
 			m.put("article", article);	
@@ -342,7 +339,8 @@ public class UserAction extends BaseAction{
 	    @RequestMapping("/toArticle")
 		public String toArtlist(HttpSession session,Map<String,List<Article>> m) {
 			User user = (User) session.getAttribute("user");
-			int authorId = user.getUserId();
+//			int authorId = user.getUserId();
+			int authorId = 1;
 			System.out.println("getArtlist userId:"+authorId);
 			List<Article> article = ArticleService.getArtlist(authorId);
 			System.out.println("my:"+article);

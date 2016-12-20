@@ -12,8 +12,7 @@ public class IndexAction extends BaseAction{
 	
 	@RequestMapping("/index")
 	public String getIndexPage(Map<String,List> m){
-		//System.out.println("indexaction");
-		
+		System.out.println("IndexAction");
 		return "home";
 	}
 }

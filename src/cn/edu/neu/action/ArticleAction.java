@@ -44,8 +44,8 @@ public class ArticleAction extends BaseAction{
 		    System.out.println("title: " + title +"content: " + content);
 		    User user = (User) session.getAttribute("user"); 
 		    int authorId = user.getUserId();
-		    
-			ArticleService.addArticle(authorId, title, content);				
+		    //最终 这里的img_url将会替换为实际的图片地址
+			ArticleService.addArticle(authorId, title, content,"/images/lyrz_img/1.jpg");				
 			List<Article> article = ArticleService.getArtlist(authorId);			
 			System.out.println("my:"+article);			
 			m.put("article", article);	

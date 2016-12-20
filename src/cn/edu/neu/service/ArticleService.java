@@ -11,7 +11,7 @@ public interface ArticleService {
 
 	List<Article> getArtlist(int authorId);
 
-	void addArticle(int authorId, String title, String content);
+	void addArticle(int authorId, String title, String content,String img_url);
 
 	boolean checkArtcile(int authorId, String title);
 

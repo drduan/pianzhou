@@ -27,9 +27,9 @@ public class ArticleServiceImpl implements ArticleService{
 	}
 
 	@Override
-	public void addArticle(int authorId, String title, String content) {
+	public void addArticle(int authorId, String title, String content,String img_url) {
 		// TODO Auto-generated method stub
-		mapper.addArticle(authorId, title, content);
+		mapper.addArticle(authorId, title, content,img_url);
 	}
 
 	@Override
